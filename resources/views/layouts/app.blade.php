@@ -8,10 +8,24 @@
     <title>{{ env('APP_NAME', 'Laravel project') }} - @yield('title', 'My page')</title>
 
     @vite('resources/js/app.js')
+    @yield('css')
 </head>
 
 <body>
-    <h1>Laravel with Bootstrap + Vite</h1>
+    <div class="wrapper">
+        @include('partials.header')
+
+        <main>
+            @yield('main-content')
+        </main>
+
+        @include('partials.footer')
+    </div>
+
+
+
+
+    @yield('js')
 </body>
 
 </html>
